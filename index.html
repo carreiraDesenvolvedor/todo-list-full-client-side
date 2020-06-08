@@ -7,24 +7,67 @@
 
     <link rel="stylesheet" href="css/signin.css" />
     <script src="js/User.js"></script>
+    <script src="js/database/Database.js"></script>
     <script src="js/main.js"></script>
 
 </head>
 
 <body class="text-center">
-    <form class="form-signin">
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
+    <div id="login_container">
+        <form class="form-signin">
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <div class="checkbox mb-3">
+                <label>
+                <input id="remember_me" type="checkbox" value="remember-me"> Remember me
             </label>
-        </div>
-        <span id="buttonSignIn" class="btn btn-lg btn-primary btn-block">Sign in</span>
-    </form>
+            </div>
+            <span id="buttonSignIn" class="btn btn-lg btn-primary btn-block">Sign in</span>
+        </form>
+    </div>
+    <div id="todolist_container">
+
+        <header>
+            <!-- Fixed navbar -->
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="#">TodoList C.D</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                    <div class="form-inline mt-2 mt-md-0">
+                        <span id="email_user_logged"></span>
+                        <button class="btn btn-light">Sair</button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Begin page content -->
+        <main role="main" class="flex-shrink-0">
+            <div class="container">
+
+                <div class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="text" class="form-control" id="input_todo" placeholder="Write your todo">
+                    </div>
+                    <button id="buttonAddTodo" class="btn btn-primary mb-2">Add</button>
+                </div>
+
+            </div>
+        </main>
+
+
+
+    </div>
 </body>
 
 </html>
