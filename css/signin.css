@@ -55,3 +55,20 @@ body {
     height: 100%;
     margin-top: 100px;
 }
+
+#li_item_to_clone {
+    display: none;
+}
+
+#containerAddTodo .form-group,
+#containerAddTodo .form-group input {
+    width: 100%;
+    height: 80px;
+    font-size: 40px;
+}
+
+#buttonAddTodo {
+    width: 100%;
+    height: 80px;
+    font-size: 40px;
+}
