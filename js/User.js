@@ -25,19 +25,6 @@ class User {
 
         this.usersAllowed.map(function(item, index) {
 
-            /* 
-
-            console.log("----------------------------------------------")
-
-            console.log(index)
-
-            console.log(item)
-            console.log(item.email + " " + email)
-            console.log(item.password + " " + password)
-
-            console.log("----------------------------------------------")
-            */
-
             if (item.email == email) {
                 if (item.password == password) {
 
@@ -62,6 +49,12 @@ class User {
 
     logout() {
 
+        localStorage.setItem(this.KEY_USER_LOGGED, false);
+        localStorage.setItem(this.KEY_USER_LOGGED_EMAIL, null);
+
+        sessionStorage.setItem(this.KEY_USER_LOGGED, false);
+        sessionStorage.setItem(this.KEY_USER_LOGGED_EMAIL, null);
+
     }
 
     isAuthenticated() {
@@ -76,6 +69,15 @@ class User {
         if (localStorageLogged == "true") {
             return true;
         }
+
+    }
+
+    writeUserAuthenticated() {
+
+        var sessionStorageEmail = sessionStorage.getItem(this.KEY_USER_LOGGED_EMAIL);
+        var localStorageEmail = localStorage.getItem(this.KEY_USER_LOGGED_EMAIL);
+
+        $('#email_user_logged').html(sessionStorageEmail != "" ? sessionStorageEmail : localStorageEmail)
 
     }
 

@@ -72,3 +72,23 @@ body {
     height: 80px;
     font-size: 40px;
 }
+
+#email_user_logged {
+    color: white;
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+.checkbox-todo-list {
+    width: 40px;
+    height: 40px;
+}
+
+.label-todo-list {
+    margin-left: 35px;
+    font-size: 30px;
+}
+
+.item-inactive {
+    opacity: 0.5;
+}
